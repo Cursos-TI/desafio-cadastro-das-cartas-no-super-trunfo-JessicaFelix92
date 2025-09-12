@@ -6,8 +6,6 @@
 // Siga os comentários para implementar cada parte do desafio.
 //Teste larissa
 
-#include <stdio.h>
-
 int main() {
     // Variáveis da carta 1
     unsigned long int populacao1;
@@ -93,29 +91,17 @@ int main() {
     printf("Densidade Populacional: %.2f hab./Km²\n", densidadepopulacional2);
     printf("PIB per capita: R$ %.2f\n", PIBpercapita2);
 
-    // Calcular Super Poder das Cartas
-    SuperPoderCarta1 = (float) populacao1 + area1 + PIB1 + npontoturistico1 + PIBpercapita1 + (1/densidadepopulacional1);
-    SuperPoderCarta2 = (float) populacao2 + area2 + PIB2 + npontoturistico2 + PIBpercapita2 + (1/densidadepopulacional2);
-
-    // Comparar atributos das Cartas
-    int resultadoPopulacao = populacao1 > populacao2;
-    int resultadoArea = area1 > area2;
-    int resultadoPIB = PIB1 > PIB2;
-    int resultadoNpontoturistico = npontoturistico1 > npontoturistico2;
-    int resultadoPIBpercapita = PIBpercapita1 > PIBpercapita2;
-    int resultadoDensidadepopulacional = densidadepopulacional1 < densidadepopulacional2;
-    int resultadoSuperPoder = SuperPoderCarta1 > SuperPoderCarta2;
-
-    //Exibir resultado das comparações
-    printf("\nComparação de Cartas:\n");
-    printf("População: A Carta 1 venceu (%d)\n", resultadoPopulacao);
-    printf("Área: A Carta 1 venceu (%d)\n", resultadoArea);
-    printf("PIB: A Carta 1 venceu (%d)\n", resultadoPIB);
-    printf("Pontos Turísticos: A Carta 1 venceu (%d)\n", resultadoNpontoturistico);
-    printf("Densidade Populacional: A Carta 1 venceu (%d)\n", resultadoDensidadepopulacional);
-    printf("PIB per Capita: A Carta 1 venceu (%d)\n", resultadoPIBpercapita);
-    printf("Super Poder: A Carta 1 venceu (%d)\n", resultadoSuperPoder);
-
+    //Comparando atributo população
+    printf("\nComparação de cartas: Atributo População\n");
+    printf("Carta 1 - %s: %lu\n", nomecidade1, populacao1);
+    printf("Carta 2 - %s: %lu\n", nomecidade2, populacao2);
+   
+    //Determinar Carta vencedora
+    if (populacao1>populacao2){
+        printf("Resultado: A Carta 1 (%s) venceu!\n", nomecidade1);
+    } else {
+        printf("Resultado: A Carta 2 (%s) venceu!\n", nomecidade2);
+    }
 
     return 0;
 }
